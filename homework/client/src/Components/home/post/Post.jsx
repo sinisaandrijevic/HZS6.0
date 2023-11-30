@@ -10,22 +10,18 @@ const Container = styled(Box)`
     align-items: center;
     flex-direction: column;
     height: 350px;
+    transition: border-radius 1s;
+    
     & > img, & > p {
         padding: 0 5px 5px 5px;
     }
 
-    $:hover{
-        transition: 1s;
-        border-radius: 18px;
+    &:hover {
+        background-color: #e0e0e0;
+        border-radius: 4px;
     }
 `;
 
-const Image = styled('img')({
-    width: '100%',
-    objectFit: 'cover',
-    borderRadius: '10px 10px 0 0',
-    height: 150
-});
 
 const CategoryIcon = styled('img')`
     filter: opacity(0.4);

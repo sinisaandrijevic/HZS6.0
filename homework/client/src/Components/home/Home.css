@@ -1,0 +1,14 @@
+.posts_display {
+    margin-left: 7vw;
+    display: flex;
+    width: 100%;
+}
+
+@media (max-width: 599.9px) {
+    .posts_display {
+        margin-left: 0;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+}
