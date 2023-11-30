@@ -11,7 +11,7 @@
   /* height: 100vh; */
   width: 100%;
   padding: 90px 0;
-  background: #fff;
+  background: linear-gradient(#fff, rgb(248, 250, 252));
 }
 .pic {
   height: auto;
@@ -71,5 +71,6 @@ a {
     text-decoration: none;
 }
 .animation {
-    max-width: 40%;
+    max-width: 50%;
+    padding-right: 18px;
 }

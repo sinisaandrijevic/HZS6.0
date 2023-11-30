@@ -7,6 +7,15 @@ import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom
 import DataProvider from './context/DataProvider';
 import Header from './Components/Header/Header';
 import Home from './Components/home/Home';
+
+import CreatePost from './Components/create/CreatePost';
+import DetailView from './Components/details/DetailView';
+import Update from './Components/create/Update';
+import About from './Components/about/About';
+import Contact from './Components/contact/Contact';
+import Login from './Components/account/Login';
+import Header from './Components/Header/Header';
+import Home from './Components/home/Home';
 import CreatePost from './Components/create/CreatePost';
 import DetailView from './Components/details/DetailView';
 import Update from './Components/create/Update';

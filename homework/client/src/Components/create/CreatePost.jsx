@@ -8,7 +8,7 @@ import { API } from '../../service/api';
 import { DataContext } from '../../context/DataProvider';
 
 const Container = styled(Box)(({ theme }) => ({
-    margin: '50px 100px',
+    margin: '100px 100px',
     [theme.breakpoints.down('md')]: {
         margin: 0
     }
@@ -24,16 +24,33 @@ const InputTextField = styled(InputBase)`
     flex: 1;
     margin: 0 30px;
     font-size: 25px;
+
+    background: #fff
+    padding: 12px;
+
+    border-bottom: rgba(0, 0, 0, 0.5);
+    border-bottom-style: solid;
+    border-width: 1px;
 `;
 
 const Textarea = styled(TextareaAutosize)`
     width: 100%;
+    max-width: 100%;
+    min-width: 50%;
+
+    min-height: 80px;
     border: none;
     margin-top: 50px;
     font-size: 18px;
     &:focus-visible {
         outline: none;
     }
+
+    padding: 12px;
+
+    border-bottom: rgba(0, 0, 0, 0.5);
+    border-bottom-style: solid;
+    border-width: 1px;
 `;
 
 const initialPost = {
@@ -70,7 +87,7 @@ const CreatePost = () => {
 
     return (
         <Container>
-
+            <h2 align="center">Create a new card</h2>
             <StyledFormControl>
                 <label htmlFor="fileInput">
                     <Add fontSize="large" color="action" />
