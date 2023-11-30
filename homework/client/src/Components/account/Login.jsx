@@ -6,10 +6,21 @@ import { useNavigate } from 'react-router-dom';
 import { API } from '../../service/api';
 import { DataContext } from '../../context/DataProvider';
 
+import { ReactComponent as Logo } from '../../Assets/logo.svg';
+
 const Component = styled(Box)`
     width: 400px;
     margin: auto;
-    box-shadow: 5px 2px 5px 2px rgb(0 0 0/ 0.6);
+    box-shadow: 4px 4px 16px 0px rgb(0 0 0/ 0.4);
+    border-radius: 4px;
+    background: #fff;
+`;
+
+const StyledLogo = styled(Logo)`
+    margin-top: 48px;
+    margin-left: 48px;
+    margin-right: 48px;
+
 `;
 
 const Wrapper = styled(Box)`
@@ -17,6 +28,7 @@ const Wrapper = styled(Box)`
     display: flex;
     flex: 1;
     overflow: auto;
+    padding-top: 0px;
     flex-direction: column;
     & > div, & > button, & > p {
         margin-top: 20px;
@@ -119,6 +131,7 @@ const Login = ({ isUserAuthenticated }) => {
 
     return (
         <Component>
+            <StyledLogo/>
             <Box>
                 {
                     account === 'login' ?

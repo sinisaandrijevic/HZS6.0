@@ -23,6 +23,10 @@ const StyledTextArea = styled(TextareaAutosize)`
     height: 100px !important;
     width: 100%; 
     margin: 0 20px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
 `;
 
 const initialValue = {
@@ -70,7 +74,7 @@ const Comments = ({ post }) => {
             <Container> 
                 <StyledTextArea 
                     rowsMin={5} 
-                    placeholder="what's on your mind?"
+                    placeholder="What's on your mind?"
                     onChange={(e) => handleChange(e)} 
                     value={comment.comments}
                 />

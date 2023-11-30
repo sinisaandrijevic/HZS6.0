@@ -6,5 +6,5 @@ export const categories = [
     { id: 5, type: "Boxing" },
     { id: 6, type: "Cycling" },
     { id: 7, type: "Swimming" },
-    { id: 8, type: "Athletics" }
+    { id: 8, type: "Athletics" },
 ];

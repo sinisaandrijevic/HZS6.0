@@ -10,6 +10,8 @@ const Component = styled(Box)`
     margin-top: 30px;
     background: #F5F5F5;
     padding: 10px;
+    border-style: outset;
+    border-width: 2px;
 `;
 
 const Container = styled(Box)`
