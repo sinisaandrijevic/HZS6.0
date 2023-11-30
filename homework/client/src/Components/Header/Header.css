@@ -6,15 +6,11 @@
     left: 0;
     display: flex;
     align-items: center;
-
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(8px);
-
     color: black;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
     border-bottom: 1px solid #e0e0e0;
-
-    /* z-index fix: elements could appear in front of the header */
     z-index: 999;
 }
 
@@ -23,12 +19,12 @@
     right: 1rem;
 }
 
-.header a:hover{
+.header a:hover {
     background-color: #e0e0e0;
     border-radius: 4px;
 }
 
-.header a:active{
+.header a:active {
     background-color: #cacaca;
     transition: 0.2s;
     border-radius: 6px;
@@ -36,29 +32,35 @@
 
 .header a {
     padding: 15px;
-    
     padding-top: 4px;
     padding-bottom: 4px;
-
     color: #000;
     text-decoration: none;
     height: 1rem;
 }
 
 .logo {
-    /* 
-        resizing fix: we have to constrict width in order to 
-        prevent the logo from becoming bigger than the header
-    */
     max-width: 12rem;
     min-width: 6rem;
     left: -18px;
-
     width: 10%;
     position: relative;
-    /* position: fixed; */
     top: 0;
     margin-top: 4px;
     display: flex;
     align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+    .logo {
+        /* margin-left: 1rem; */
+        display: none;
+    }
+    .links {
+        max-width: 5rem;
+        position: absolute;
+        left: 0.5rem;
+        font-size: smaller;
+    }
+
 }

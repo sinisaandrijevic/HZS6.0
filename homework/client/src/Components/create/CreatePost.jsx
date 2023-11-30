@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 
 import { styled, Box, TextareaAutosize, Button, InputBase, FormControl  } from '@mui/material';
-import { AddCircle as Add } from '@mui/icons-material';
+// import { AddCircle as Add } from '@mui/icons-material';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 import { API } from '../../service/api';
@@ -89,9 +89,9 @@ const CreatePost = () => {
         <Container>
             <h2 align="center">Create a new card</h2>
             <StyledFormControl>
-                <label htmlFor="fileInput">
+                {/* <label htmlFor="fileInput">
                     <Add fontSize="large" color="action" />
-                </label>
+                </label> */}
                 <input
                     type="file"
                     id="fileInput"

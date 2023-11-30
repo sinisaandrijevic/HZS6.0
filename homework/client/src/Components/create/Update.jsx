@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
-
 import { Box, styled, TextareaAutosize, Button, FormControl, InputBase } from '@mui/material';
 import { AddCircle as Add } from '@mui/icons-material';
 import { useNavigate, useParams } from 'react-router-dom';
-
 import { API } from '../../service/api';
 
 const Container = styled(Box)(({ theme }) => ({
     margin: '100px 100px',
     [theme.breakpoints.down('md')]: {
-        margin: 0
-    }
+        margin: 0,
+    },
 }));
 
 const StyledFormControl = styled(FormControl)`
@@ -24,32 +22,28 @@ const InputTextField = styled(InputBase)`
     margin: 0 30px;
     font-size: 25px;
 
-    background: #fff
+    background: #fff;
     padding: 12px;
 
-    border-bottom: rgba(0, 0, 0, 0.5);
-    border-bottom-style: solid;
-    border-width: 1px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 `;
 
 const StyledTextArea = styled(TextareaAutosize)`
     width: 100%;
     max-width: 100%;
     min-width: 50%;
-
     min-height: 80px;
     border: none;
     margin-top: 50px;
     font-size: 18px;
+
     &:focus-visible {
         outline: none;
     }
 
     padding: 12px;
 
-    border-bottom: rgba(0, 0, 0, 0.5);
-    border-bottom-style: solid;
-    border-width: 1px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 `;
 
 const initialPost = {
@@ -58,8 +52,8 @@ const initialPost = {
     picture: '',
     username: 'codeforinterview',
     categories: 'Tech',
-    createdDate: new Date()
-}
+    createdDate: new Date(),
+};
 
 const Update = () => {
     const navigate = useNavigate();
@@ -75,22 +69,22 @@ const Update = () => {
             if (response.isSuccess) {
                 setPost(response.data);
             }
-        }
+        };
         fetchData();
-    });
+    }, [id]); // Added dependency array to avoid unnecessary re-fetching
 
     useEffect(() => {
-        
-    }, [file])
+        // You may add logic related to file handling here if needed
+    }, [file]);
 
     const updateBlogPost = async () => {
         await API.updatePost(post);
         navigate(`/details/${id}`);
-    }
+    };
 
     const handleChange = (e) => {
         setPost({ ...post, [e.target.name]: e.target.value });
-    }
+    };
 
     return (
         <Container>
@@ -102,22 +96,29 @@ const Update = () => {
                 <input
                     type="file"
                     id="fileInput"
-                    style={{ display: "none" }}
+                    style={{ display: 'none' }}
                     onChange={(e) => setFile(e.target.files[0])}
                 />
-                <InputTextField onChange={(e) => handleChange(e)} value={post.title} name='title' placeholder="Title" />
-                <Button onClick={() => updateBlogPost()} variant="contained" color="primary">Update</Button>
+                <InputTextField
+                    onChange={(e) => handleChange(e)}
+                    value={post.title}
+                    name="title"
+                    placeholder="Title"
+                />
+                <Button onClick={() => updateBlogPost()} variant="contained" color="primary">
+                    Update
+                </Button>
             </StyledFormControl>
 
             <StyledTextArea
                 rowsMin={5}
                 placeholder="Tell your story..."
-                name='description'
-                onChange={(e) => handleChange(e)} 
+                name="description"
+                onChange={(e) => handleChange(e)}
                 value={post.description}
             />
         </Container>
-    )
-}
+    );
+};
 
 export default Update;

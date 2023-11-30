@@ -5,6 +5,8 @@ import { API } from '../../service/api';
 import { DataContext } from '../../context/DataProvider';
 import { ReactComponent as Logo } from '../../Assets/logo.svg';
 
+import './account.css'
+
 const Component = styled(Box)`
     width: 400px;
     margin: auto;
@@ -46,11 +48,6 @@ const SignupButton = styled(Button)`
     height: 48px;
     border-radius: 2px;
     box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
-`;
-
-const Text = styled(Typography)`
-    color: #878787;
-    font-size: 12px;
 `;
 
 const Error = styled(Typography)`
